@@ -1,2 +1,19 @@
-﻿  SocialBook.cpp
-  ProgramDesign.vcxproj -> C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\Debug\ProgramDesign.exe
+﻿  Book.cpp
+C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Book.cpp(88,13): error C2248: 'Book::BookName': cannot access protected member declared in class 'Book'
+C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Book.h(14): message : see declaration of 'Book::BookName'
+C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Book.h(11): message : see declaration of 'Book'
+C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Book.cpp(89,10): error C2248: 'Book::BookCode': cannot access protected member declared in class 'Book'
+C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Book.h(15): message : see declaration of 'Book::BookCode'
+C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Book.h(11): message : see declaration of 'Book'
+C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Book.cpp(90,10): error C2248: 'Book::Price': cannot access protected member declared in class 'Book'
+C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Book.h(16): message : see declaration of 'Book::Price'
+C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Book.h(11): message : see declaration of 'Book'
+C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Book.cpp(91,10): error C2248: 'Book::Author': cannot access protected member declared in class 'Book'
+C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Book.h(18): message : see declaration of 'Book::Author'
+C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Book.h(11): message : see declaration of 'Book'
+C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Book.cpp(92,10): error C2248: 'Book::Count': cannot access protected member declared in class 'Book'
+C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Book.h(19): message : see declaration of 'Book::Count'
+C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Book.h(11): message : see declaration of 'Book'
+C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Book.cpp(98,8): error C2065: 'BookName': undeclared identifier
+  SocialBook.cpp
+  Generating Code...

@@ -1,4 +1,9 @@
+#include <iostream>
+#include <string>
 #include "Book.h"
+
+using std::ostream;
+using std::istream;
 
 void Book::Display() const
 {
@@ -58,13 +63,38 @@ string Book::GetBookAuthor() const
 	else return Author;
 }
 
-ostream& operator<<(ostream& out)
+string Book::GetBookClass() const
 {
-	// TODO: insert return statement here
-	out<<BookName<<" "
-		<<BookCode<<" "
-		<<Price<<" "
-		<<Author<<" "
-		<<
+	return Empty;
+}
+
+bool Book::Modify()
+{
+	return false;
+}
+
+bool Book::Add(int numbers)
+{
+	if (numbers > 0)
+	{
+		Count += numbers;
+		return true;
+	}
+	else return false;
+}
+
+ostream& operator<<(ostream& out, Book& book)
+{
+	out << book.BookName << " "
+		<< book.BookCode << " "
+		<< book.Price << " "
+		<< book.Author << " "
+		<< book.Count << " ";
 	return out;
+}
+
+istream& operator>>(istream& in, Book& book)
+{
+	in >> BookName;
+	return in;
 }

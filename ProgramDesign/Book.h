@@ -3,6 +3,9 @@
 
 #define Empty "NULL"
 
+class ostream;
+class istream;
+
 using std::string;
 
 class Book
@@ -37,5 +40,10 @@ public:
 	virtual string GetBookPress() const;
 	virtual string GetBookAuthor() const;
 
-	friend ostream& operator<<(ostream& out);
+	virtual string GetBookClass() const;
+	virtual bool Modify();
+	virtual bool Add(int numbers);
+
+	friend ostream& operator<<(ostream& out, Book& book);
+	friend istream& operator>>(istream& in, Book& book);
 };
