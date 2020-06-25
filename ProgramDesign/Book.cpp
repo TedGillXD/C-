@@ -85,16 +85,10 @@ bool Book::Add(int numbers)
 
 ostream& operator<<(ostream& out, Book& book)
 {
-	out << book.BookName << " "
-		<< book.BookCode << " "
-		<< book.Price << " "
-		<< book.Author << " "
-		<< book.Count << " ";
+	out << book.GetBookName() << " "
+		<< book.GetBookCode() << " "
+		<< book.GetBookPrice() << " "
+		<< book.GetBookAuthor() << " "
+		<< book.GetBookCount() << " ";
 	return out;
-}
-
-istream& operator>>(istream& in, Book& book)
-{
-	in >> BookName;
-	return in;
 }

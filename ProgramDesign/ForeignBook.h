@@ -4,7 +4,6 @@
 class ForeignBook :public Book
 {
 private:
-	string BookClass = "Foreign";
 	string Language;
 
 public:

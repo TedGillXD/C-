@@ -5,7 +5,7 @@
 
 ForeignBook::ForeignBook(string BookName, string BookCode, string Language /*= "English"*/,
 	double Pirce /*= 0.0*/, int Count /*= 1*/, string Press /*= ""*/, string Author /*= ""*/)
-	:Book(BookName, BookCode, Pirce, Press, Author, Count)
+	:Book(BookName, BookCode, Pirce, Press, Author, Count, "Foreign")
 {
 	this->Language = Language;
 }

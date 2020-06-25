@@ -18,9 +18,10 @@ protected:
 	string Author;
 	int Count;
 
+	string BookClass;
+
 public:
-	
-	Book(string BookName, string BookCode, double Pirce, string Press, string Author, int Count)
+	Book(string BookName, string BookCode, double Pirce, string Press, string Author, int Count, string BookClass = Empty)
 	{
 		this->Author = Author;
 		this->BookCode = BookCode;
@@ -28,6 +29,7 @@ public:
 		this->Press = Press;
 		this->Price = Pirce;
 		this->Count = Count;
+		this->BookClass = BookClass;
 	}
 
 	virtual void Display() const;
@@ -45,5 +47,5 @@ public:
 	virtual bool Add(int numbers);
 
 	friend ostream& operator<<(ostream& out, Book& book);
-	friend istream& operator>>(istream& in, Book& book);
+
 };
