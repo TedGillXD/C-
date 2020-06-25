@@ -5,13 +5,13 @@
 
 ForeignBook::ForeignBook(string BookName, string BookCode, string Language /*= "English"*/,
 	double Pirce /*= 0.0*/, int Count /*= 1*/, string Press /*= ""*/, string Author /*= ""*/)
-	:Book(BookName, BookCode, Pirce, Press, Author, Count, "Foreign")
+	:Book(BookName, BookCode, Pirce, Press, Author, Count)
 {
 	this->Language = Language;
 }
 
-ForeignBook::ForeignBook(Book book, string Language /*= "English"*/)
-	:Book(book)
+ForeignBook::ForeignBook(Book* book, string Language /*= "English"*/)
+	:Book(*book)
 {
 	this->Language = Language;
 }
@@ -19,6 +19,7 @@ ForeignBook::ForeignBook(Book book, string Language /*= "English"*/)
 void ForeignBook::Display() const
 {
 	using namespace std;
+	cout << BookClass << " " << Language << " ";
 	Book::Display();
 }
 

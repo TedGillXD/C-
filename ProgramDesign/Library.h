@@ -9,7 +9,6 @@ class Library
 {
 private:
 	std::vector<Book*> BookList;
-	std::vector<Book*>::iterator it = BookList.begin();
 
 public:
 
@@ -17,10 +16,11 @@ public:
 
 	void init();
 	void Add();
+	void AddCount();
 	void Lend();
 	void Return();
 	void Serach();
 	void Purchase();
 
-	friend istream& operator>>(istream& in, Book& book);
+	void ShowBookList();
 };

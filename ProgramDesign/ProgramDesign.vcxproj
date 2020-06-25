@@ -147,6 +147,7 @@
     <ClCompile Include="SocialBook.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BasicFunction.h" />
     <ClInclude Include="Book.h" />
     <ClInclude Include="ForeignBook.h" />
     <ClInclude Include="Library.h" />

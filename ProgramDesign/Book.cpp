@@ -11,18 +11,9 @@ void Book::Display() const
 	cout << BookName << " "
 		<< BookCode << " "
 		<< Press << " "
-		<< Author << " ";
-
-}
-
-void Book::DisplayAdmin() const
-{
-	using namespace std;
-	cout << BookName << " "
-		<< BookCode << " "
-		<< Press << " "
 		<< Author << " "
-		<< Count << " ";
+		<< Count << endl;
+
 }
 
 string Book::GetBookName() const

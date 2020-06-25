@@ -5,8 +5,11 @@ class SocialBook :public Book
 {
 private:
 
+	string BookClass = "Social";
+
 public:
 	SocialBook(string BookName, string BookCode, double Pirce = 0.0, int Count = 1, string Press = "", string Author = "");
+	SocialBook(Book* book);
 
 	virtual void Display() const override;
 
