@@ -11,6 +11,13 @@
 
 
 
+void Library::printUI() const
+{
+	std::cout << "*****************************" << std::endl;
+	std::cout << "     欢迎使用图书管理系统      " << std::endl;
+	std::cout << "*****************************" << std::endl;
+}
+
 Library::Library()
 {
 	init();
@@ -18,9 +25,14 @@ Library::Library()
 
 void Library::init()
 {
+	printUI();
+
 	//@TODO: initial BookList form document, print user interface
 	ofstream BookListFile("BookList.dat");
 
+
+	//@TODO: Login UI, have User account and Administrator account
+	ofstream UserListFile("UserList.dat");
 }
 
 void Library::Add()
@@ -88,7 +100,7 @@ void Library::Add()
 		BookList.push_back(SocialNewBook);
 		break;
 	}
-
+	 
 	case 4:
 	{
 		std::cout << "请输入书籍所用语言" << std::endl;
@@ -118,16 +130,33 @@ void Library::AddCount()
 
 	choose--;
 	BookList[choose]->Add(numbers);
+
+	return;
 }
 
 void Library::Lend()
 {
+	//clear the List in last time
+	ChosenBook.clear();
 
+	ShowBookList();
+	std::cout << "要借哪几本书(输入0结束): ";
+
+	int choose;
+	std::cin >> choose;
+	while (choose != 0)
+	{
+		ChosenBook.push_back(BookList[choose - 1]);
+		BookList[choose - 1]->Lend();
+		std::cin >> choose;
+	}
+
+	return;
 }
 
 void Library::Return()
 {
-	//@TODO: User return Books
+	//@TODO: Read the User's lending order and choose which book User wants to return
 }
 
 void Library::Serach()
@@ -164,11 +193,28 @@ void Library::Serach()
 			continue;
 		}
 	}
+
+	system("pause");
 }
 
 void Library::Purchase()
 {
+	//clear the List in last time
+	ChosenBook.clear();
 
+	ShowBookList();
+	std::cout << "要购买哪几本书(输入0结束): ";
+
+	int choose;
+	std::cin >> choose;
+	while (choose != 0)
+	{
+		ChosenBook.push_back(BookList[choose - 1]);
+		BookList[choose - 1]->Lend();
+		std::cin >> choose;
+	}
+
+	return;
 }
 
 void Library::ShowBookList()
@@ -179,4 +225,6 @@ void Library::ShowBookList()
 		std::cout << i;
 		it->Display();
 	}
+
+	return;
 }

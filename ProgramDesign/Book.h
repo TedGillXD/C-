@@ -42,6 +42,9 @@ public:
 	virtual bool Modify();
 	virtual bool Add(int numbers);
 
+	virtual void Lend();
+	virtual double Buy();
+
 	friend ostream& operator<<(ostream& out, Book& book);
 
 };

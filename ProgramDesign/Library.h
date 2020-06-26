@@ -10,6 +10,10 @@ class Library
 private:
 	std::vector<Book*> BookList;
 
+	std::vector<Book*> ChosenBook;
+
+	void printUI() const;
+
 public:
 
 	Library();

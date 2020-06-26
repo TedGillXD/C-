@@ -74,6 +74,17 @@ bool Book::Add(int numbers)
 	else return false;
 }
 
+void Book::Lend()
+{
+	Count--;
+}
+
+double Book::Buy()
+{
+	Count--;
+	return Price;
+}
+
 ostream& operator<<(ostream& out, Book& book)
 {
 	out << book.GetBookName() << " "
