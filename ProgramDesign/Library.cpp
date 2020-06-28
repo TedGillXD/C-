@@ -12,11 +12,12 @@
 #include <cctype>
 #include <fstream>
 
-#define DEBUG if(debug != 0)
 
+//若Debug != 0， 则开启调试模式，在程序运行的过程中有辅助判断流程的输出和暂停等出现
+#define DEBUG if(debug != 0)
 int debug = 0;
 
-bool Library::printUI() const
+bool Library::printLogin() const
 {
 	std::string Account, Password;
 	bool bIsLogined = false;
@@ -129,7 +130,7 @@ Library::Library()
 
 void Library::init()
 {
-	bool bIsAdmin = printUI();
+	bool bIsAdmin = printLogin();
 
 	//@TODO: initial BookList form document, print user interface
 	std::ifstream BookListFile;
@@ -427,7 +428,7 @@ void Library::Lend()
 	std::vector<Book*>::iterator itl = ChosenBook.begin();
 	for (; itl != ChosenBook.end(); ++itl)
 	{
-		BorrowedBookFile << (*itl)->GetBookName() << std::endl;
+		BorrowedBookFile << (*itl)->GetBookName() << " ";
 	}
 
 	return;
@@ -462,13 +463,19 @@ void Library::Return()
 	std::vector<Book*>::iterator itb = BookList.begin();
 	for (its = BookName.begin(); its != BookName.end(); ++its)
 	{
-		for (; itb != BookList.end(); ++itb)
+		for (itb = BookList.begin(); itb != BookList.end(); ++itb)
 		{
-			if ((*itb)->GetBookName()._Equal(its->c_str()))
+			if (!((*itb)->GetBookName().compare(its->c_str())))
+
 			{
 				(*itb)->Return();
 			}
 		}
+	}
+
+	DEBUG
+	{
+		system(PAUSE);
 	}
 
 	std::ofstream BorrowedBook("BorrowedBook.dat");
@@ -598,12 +605,12 @@ void Library::Modify()
 {
 	ShowBookList();
 
-	std::cout << "请输入要修改的图书数量(输入0或以下或大于图书数量的数退出)：";
+	std::cout << "请输入要修改的图书序号(输入0或以下或大于图书数量的数退出)" << std::endl;
 	char cchoose = _getch();
 	int choose = CharToNum(cchoose);
 	choose--;
 
-	if (choose < 0 || choose >= BookList.size())
+	if (choose < 0 || choose > BookList.size())
 	{
 		return;
 	}
@@ -615,35 +622,39 @@ void Library::Modify()
 		system(PAUSE);
 	}
 
-	BookList[choose]->Modify();
+	bool judge = BookList[choose]->Modify();
 
-	std::ofstream BookListFile;
-	BookListFile.open("BookList.dat");
-	for (int i = 0; i < BookList.size(); i++)
+	if (judge)
 	{
-		if (BookList[i]->GetBookClassNumber() != 3)
+		std::ofstream BookListFile;
+		BookListFile.open("BookList.dat");
+		for (int i = 0; i < BookList.size(); i++)
 		{
-			OutputDataText(BookListFile, *BookList[i], BookList[i]->GetBookClassNumber());
+			if (BookList[i]->GetBookClassNumber() != 3)
+			{
+				OutputDataText(BookListFile, *BookList[i], BookList[i]->GetBookClassNumber());
+			}
+			else
+			{
+				OutputDataText(BookListFile, BookList[i]);
+			}
 		}
-		else
-		{
-			OutputDataText(BookListFile, BookList[i]);
-		}
-	}
 
-	BookListFile.close();
+		BookListFile.close();
+	}
 
 }
 
 // if the BookList empty, return false
 bool Library::ShowBookList()
 {
+	std::cout << "序号    类别      书名               编号      价格     作者          出版社         剩余数量      语言" << std::endl;
 	if (!BookList.empty())
 	{
 		std::vector<Book*>::iterator it = BookList.begin();
 		for (int i = 1; it != BookList.end(); ++it, i++)
 		{
-			std::cout << i << " ";
+			std::cout <<" "<< i << "     ";
 			(*it)->Display();
 		}
 		return true;

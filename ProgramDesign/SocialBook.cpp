@@ -29,7 +29,8 @@ string SocialBook::GetBookClass() const
 bool SocialBook::Modify()
 {
 	//@TODO: Modify the elements of the book informations
-	return false;
+	bool judge = Book::Modify();
+	return judge;
 }
 
 int SocialBook::GetBookClassNumber()
@@ -51,14 +52,13 @@ std::istream& operator>>(std::istream& in, SocialBook* socialbook)
 
 std::ostream& operator<<(std::ostream& out, SocialBook socialbook)
 {
-	out << std::setiosflags(std::ios::right);
 	out << 3 << " ";
-	out << std::setw(20) << socialbook.BookName;
-	out << std::setw(13) << socialbook.BookCode;
-	out << std::setprecision(2) << std::setw(7) << socialbook.Price;
-	out << std::setw(20) << socialbook.Author;
-	out << std::setw(20) << socialbook.Press;
-	out << std::setw(5) << socialbook.Count;
+	out << socialbook.BookName << " ";
+	out  << socialbook.BookCode << " ";
+	out  << socialbook.Price << " ";
+	out  << socialbook.Author << " ";
+	out  << socialbook.Press << " ";
+	out  << socialbook.Count << " ";
 
 	return out;
 }

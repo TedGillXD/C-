@@ -12,7 +12,7 @@ private:
 
 	std::vector<Book*> ChosenBook;
 
-	bool printUI() const;
+	bool printLogin() const;
 
 	void ReadDataText(std::ifstream& ifs);
 

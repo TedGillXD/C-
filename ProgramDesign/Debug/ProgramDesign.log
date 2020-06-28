@@ -1,10 +1,12 @@
 ﻿  Library.cpp
-C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Library.cpp(88,6): warning C4101: 'Count': unreferenced local variable
-C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Library.cpp(87,9): warning C4101: 'Price': unreferenced local variable
-C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Library.cpp(358,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Library.cpp(409,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Library.cpp(480,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Library.cpp(578,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Library.cpp(606,27): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Library.cpp(622,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Library.cpp(89,6): warning C4101: 'Count': unreferenced local variable
+C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Library.cpp(88,9): warning C4101: 'Price': unreferenced local variable
+C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Library.cpp(359,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Library.cpp(410,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Library.cpp(487,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Library.cpp(585,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Library.cpp(613,27): warning C4018: '>': signed/unsigned mismatch
+C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Library.cpp(631,21): warning C4018: '<': signed/unsigned mismatch
+  Main.cpp
+  Generating Code...
   ProgramDesign.vcxproj -> C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\Debug\ProgramDesign.exe

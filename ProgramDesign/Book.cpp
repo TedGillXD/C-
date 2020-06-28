@@ -11,13 +11,13 @@ void Book::Display() const
 	using namespace std;
 	string book = "¡¶" + BookName + "¡·";
 	cout << bookclass;
-	cout << std::setiosflags(std::ios::right);
-	cout << std::setw(10) << book;
-	cout << std::setw(12) << BookCode;
-	cout << std::setprecision(5) << std::setw(5) << Price;
-	cout << std::setw(10) << Author;
-	cout << std::setw(10) << Press;
-	cout << std::setw(4) << Count << endl;
+	cout << std::setiosflags(std::ios::left);
+	cout << std::setw(20) << book;
+	cout << std::setw(14) << BookCode;
+	cout << "£¤" << std::setprecision(5) << std::setw(6) << Price;
+	cout << std::setw(15) << Author;
+	cout << std::setw(18) << Press;
+	cout << std::setw(11) << Count << endl;
 
 }
 
@@ -119,13 +119,12 @@ int Book::GetBookClassNumber()
 
 ostream& operator<<(ostream& out, Book book)
 {
-	out << std::setiosflags(std::ios::right);
-	out << std::setw(10) << book.BookName;
-	out << std::setw(12) << book.BookCode;
-	out << std::setprecision(2) << std::setw(5) << book.Price;
-	out << std::setw(10) << book.Author;
-	out << std::setw(10) << book.Press;
-	out << std::setw(4) << book.Count;
+	out << book.BookName << " ";
+	out  << book.BookCode << " ";
+	out  << book.Price << " ";
+	out << book.Author << " ";
+	out  << book.Press << " ";
+	out  << book.Count;
 
 	return out;
 }
