@@ -12,7 +12,9 @@ private:
 
 	std::vector<Book*> ChosenBook;
 
-	void printUI() const;
+	bool printUI() const;
+
+	void ReadDataText(std::ifstream& ifs);
 
 public:
 
@@ -23,8 +25,9 @@ public:
 	void AddCount();
 	void Lend();
 	void Return();
-	void Serach();
+	void Search();
 	void Purchase();
+	void Modify();
 
-	void ShowBookList();
+	bool ShowBookList();
 };

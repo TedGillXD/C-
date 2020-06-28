@@ -3,10 +3,17 @@
 
 #define Empty "NULL"
 
-class ostream;
-
 using std::string;
 using std::istream;
+using std::ostream;
+
+enum BookClass
+{
+	Null = 0,
+	Science = 1,
+	Social = 2,
+	Foreign = 3
+};
 
 class Book
 {
@@ -18,6 +25,8 @@ protected:
 	string Author;
 	int Count;
 
+	string bookclass;
+
 public:
 	Book(string BookName, string BookCode, double Pirce, string Press, string Author, int Count)
 	{
@@ -27,7 +36,9 @@ public:
 		this->Press = Press;
 		this->Price = Pirce;
 		this->Count = Count;
+		this->bookclass = "无分类";
 	}
+	Book() { this->bookclass = "无分类"; }
 
 	virtual void Display() const;
 
@@ -39,12 +50,17 @@ public:
 	virtual string GetBookAuthor() const;
 
 	virtual string GetBookClass() const;
-	virtual bool Modify();
 	virtual bool Add(int numbers);
 
 	virtual void Lend();
 	virtual double Buy();
+	virtual void Return();
+	virtual bool Modify();
 
-	friend ostream& operator<<(ostream& out, Book& book);
+	virtual int GetBookClassNumber();
+
+	friend ostream& operator<<(ostream& out, Book book);
+
+	friend istream& operator>>(istream& in, Book* book);
 
 };
