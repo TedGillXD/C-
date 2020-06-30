@@ -7,6 +7,6 @@ C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Library.cpp(487,
 C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Library.cpp(585,20): warning C4018: '<': signed/unsigned mismatch
 C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Library.cpp(613,27): warning C4018: '>': signed/unsigned mismatch
 C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\ProgramDesign\Library.cpp(631,21): warning C4018: '<': signed/unsigned mismatch
-  Main.cpp
+  ScienceBook.cpp
   Generating Code...
   ProgramDesign.vcxproj -> C:\Users\tedgill\OneDrive\C++_Class\ProgramDesign\Debug\ProgramDesign.exe

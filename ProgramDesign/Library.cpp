@@ -38,7 +38,7 @@ bool Library::printLogin() const
 
 		while (!bIsLogined)
 		{
-			system(REFRESH);
+			REFRESH
 			std::cout << "*****************************" << std::endl;
 			std::cout << "     欢迎使用图书管理系统      " << std::endl;
 			std::cout << "*****************************" << std::endl;
@@ -62,7 +62,7 @@ bool Library::printLogin() const
 			{
 				times++;
 				std::cout << "密码错误，请重新输入，剩余次数" << 5 - times << "次";
-				system(PAUSE);
+				PAUSE
 			}
 		}
 
@@ -138,10 +138,10 @@ void Library::init()
 	ReadDataText(BookListFile);
 	BookListFile.close();
 
-	while (true) //27为esc的ASCII码
+	while (true) 
 	{
 
-		system(REFRESH);
+		REFRESH
 
 		std::cout << "*****************************" << std::endl;
 		std::cout << "     请选择你要进行的服务      " << std::endl;
@@ -174,7 +174,7 @@ void Library::init()
 			case 4:
 			{
 				ShowBookList();
-				system(PAUSE);
+				PAUSE
 				break;
 			}
 
@@ -225,7 +225,7 @@ void Library::init()
 
 void Library::Add()
 {
-	system(REFRESH);
+	REFRESH
 
 	Book* NewBook;
 	string BookName, BookCode, SPrice, Press, Author, SCount, BookClass;
@@ -279,7 +279,7 @@ void Library::Add()
 		if (!isdigit(cchoose) || cchoose < '1' || cchoose > '4')
 		{
 			std::cout << "选择错误，请重新选择" << std::endl;
-			system(PAUSE);
+			PAUSE
 		}
 
 	}
@@ -379,7 +379,7 @@ void Library::Lend()
 	if (IsBooksLendOut())
 	{
 		std::cout << "你仍有图书未归还，请先归还上次书籍后再次借书" << std::endl;
-		system(PAUSE);
+		PAUSE
 		return;
 	}
 
@@ -475,7 +475,7 @@ void Library::Return()
 
 	DEBUG
 	{
-		system(PAUSE);
+		PAUSE
 	}
 
 	std::ofstream BorrowedBook("BorrowedBook.dat");
@@ -504,7 +504,7 @@ void Library::Search()
 	std::string KeyWord;
 	do
 	{
-		system(REFRESH);
+		REFRESH
 
 		std::cout << "请输入你要搜索的书籍的关键字(不接受null):";
 		std::cin >> KeyWord;
@@ -548,7 +548,7 @@ void Library::Search()
 		std::cout << "没有查询到相关书籍" << std::endl;
 	}
 
-	system(PAUSE);
+	PAUSE
 }
 
 void Library::Purchase()
@@ -596,7 +596,7 @@ void Library::Purchase()
 
 	BookListFile.close();
 
-	system(PAUSE);
+	PAUSE
 
 	return;
 }
@@ -619,7 +619,7 @@ void Library::Modify()
 	{
 		std::cout << choose << std::endl;
 		std::cout << BookList.size() << std::endl;
-		system(PAUSE);
+		PAUSE
 	}
 
 	bool judge = BookList[choose]->Modify();
@@ -662,7 +662,7 @@ bool Library::ShowBookList()
 	else
 	{
 		std::cout << "书架为空" << std::endl;
-		system(PAUSE);
+		PAUSE
 		return false;
 	}
 }

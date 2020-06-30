@@ -7,8 +7,8 @@
 #include "Book.h"
 #include "ForeignBook.h"
 
-#define PAUSE "pause"
-#define REFRESH "cls"
+#define PAUSE system("pause");
+#define REFRESH system("cls");
 #define EXIT_NORMAL 0
 #define EXIT_DOCUMENT_ERROR 1
 #define EXIT_LOGIN_FAIL 2
